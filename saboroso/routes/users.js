@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-   conexao.query("select * FROM tb_users order by name",(err,results)=>{
+   conexao.query("select * from tb_users order by name",(err,results)=>{
       if(err){
         res.send(err);
       }else{
