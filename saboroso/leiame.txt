@@ -1,0 +1,23 @@
+1 - instalação do express  = npm install express-generator -g
+2 - criação da pasta do projeto, entra na pasta
+3 - express -help
+4 - na pasta do projeto = express --ejs saboroso
+5 - na pasta do projeto = npm install 
+6 - na pasta do projeto = SET DEBUG=saboroso:* & npm start
+7 - na unidade da máquina =  npm install -g bower
+8 - na pasta public/admin = bower install
+
+9 - instalação do mysql installer s
+10 -na pasta do projeto, drive do banco mysql =  npm install --save mysql2
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'test'
+});
+11 - instlação = npm install --save-dev nodemon
+12 - alteração do package.json =  "start": "node ./bin/www" para  "start": "nodemon ./bin/www"
+
+13 - alteração no banco mysql = 
+ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+ALTER USER 'user'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'root';
