@@ -9,11 +9,19 @@
 
 9 - instalação do mysql installer s
 10 -na pasta do projeto, drive do banco mysql =  npm install --save mysql2
+
+const mysql = require('mysql2');
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'test'
 });
+
+module.exports = connection;
+
+
+
 11 - instlação = npm install --save-dev nodemon
 12 - alteração do package.json =  "start": "node ./bin/www" para  "start": "nodemon ./bin/www"
 
@@ -21,3 +29,13 @@ const connection = mysql.createConnection({
 ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 ALTER USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 ALTER USER 'user'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+
+Componentes VS:
+Auto Close Tag
+Auto Import
+Path Autocomplete
+ejs Snippets
+
+
