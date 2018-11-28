@@ -1,42 +1,39 @@
-<!DOCTYPE HTML>
-<html>
-		<%- include('inc/head-pagina') -%>
 
-	<body>
-		
-	<div class="gtco-loader"></div>
-	
-	<div id="page">
-
-	
+	<%- include('inc/head-pagina') -%>
 	<%- include('inc/menu-pagina') -%>	
 	<%- include('inc/header-padrao') -%>
 
-	
-	
+
 	<div class="gtco-section" style="padding-bottom: 14em;">
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-6 animate-box">
-					<h3>Reserva de mesa</h3>
-                    <form action="#">
+                    <h3>Reserva de mesa</h3>
+                    
+                    <form action="" method="POST" id="reservations">
+
+    
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputName">Nome</label>
-                                <input type="text" id="inputName" name="name" class="form-control">
+                                <input type="text" id="inputName" name="name" class="form-control" tabindex="1" required autocomplete="off" >
                             </div>
+                            <div class="item-text input-error"></div> 
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputEmail">E-mail</label>
-                                <input type="email" id="inputEmail" name="email" class="form-control">
+                                <input type="email" title="Por favor preencha o seu email válido" name="email" class="form-control" tabindex="2" id="inputEmail" required placeholder="Adicionar um e-mail válido" autocomplete="off">
                             </div>
+                            <div class="item-text input-error"></div> 
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputPeople">Pessoas</label>
-                                <select id="inputPeople" name="people" class="form-control">
+                                <select id="inputPeople" name="people" required tabindex="3" class="form-control">
                                     <option value=""> -- selecione -- </option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -45,23 +42,28 @@
                                     <option value="5">5+</option>
                                 </select>
                             </div>
+                            <div class="item-text input-error"></div>
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputDate">Data</label>
-                                <input type="text" id="inputDate" name="date" class="form-control">
+                                <input type="text" id="inputDate" name="date" required tabindex="4" class="form-control">
                             </div>
+                            <div class="item-text input-error"></div>
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputTime">Hora</label>
-                                <input type="text" id="inputTime" name="time" class="form-control">
+                                <input type="text" id="inputTime" name="time" required tabindex="5" class="form-control">
                             </div>
+                            <div class="item-text input-error"></div>
                         </div>
                     
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <input type="submit" class="btn btn-primary btn-block" value="Reservar Agora">
+                                <input type="submit" class="btn btn-primary btn-block" name="enviar" id="enviar"  value="Reservar Agora">
                             </div>
                         </div>
                     </form>
@@ -71,8 +73,8 @@
 					<div class="gtco-contact-info">
 						<h3>Informações de Contato</h3>
 						<ul>
-							<li class="address">Avenida, R. José Versolato, 101 - 12ª andar - Centro, São Bernardo do Campo - SP, 09750-730</li>
-							<li class="phone"><a href="tel://1121497360">(11) 98333-0842</a></li>
+							<li class="address">Avenida, R. José Versolato, 454545 - 17ª andar - Centro, São Paulo - SP,00000-730</li>
+							<li class="phone"><a href="tel://11983330842">(11) 98333-0842</a></li>
 							<li class="email"><a href="mailto:itasouza@yahoo.com.br">itasouza@yahoo.com.br</a></li>
 							<li class="url"><a href="http://www.yahoo.com.br">yahoo.com.br</a></li>
 						</ul>
@@ -87,11 +89,4 @@
 
 	<%- include('inc/footer-pagina') -%>
 
-	</div>
-
-	<%- include('inc/gotop-pagina') -%>
-	<%- include('inc/script-pagina') -%>
 	
-	</body>
-</html>
-

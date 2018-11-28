@@ -1,13 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-		<%- include('inc/head-pagina') -%>
-	<body>
-		
-	<div class="gtco-loader"></div>
-	
-	<div id="page">
 
-	
+	<%- include('inc/head-pagina') -%>
 	<%- include('inc/menu-pagina') -%>
 	<%- include('inc/header-padrao') -%>
 
@@ -18,12 +10,12 @@
 						<div class="col-md-6 animate-box">
 						<h3>Entre em Contato</h3>
 						
-						<form action="" method="POST" id="formulario">
+						<form action="" method="POST" id="contato">
 	
 							<div class="row form-group">
 								<div class="col-md-12">
 									<label class="sr-only" for="name">Nome</label>
-									<input type="text" id="name" name="name" class="form-control" required autocomplete="off" placeholder="Seu nome">
+									<input type="text" id="name" name="name" class="form-control" required autocomplete="off" tabindex="1" placeholder="Seu nome">
 								</div>
 								<div class="item-text input-error"></div> 
 							</div>
@@ -39,7 +31,7 @@
 							<div class="row form-group">
 								<div class="col-md-12">
 									<label class="sr-only" for="message">Mensagem</label>
-									<textarea name="message" id="message" cols="30" rows="10" class="form-control" required autocomplete="off" placeholder="Escreve alguma coisa"></textarea>
+									<textarea name="message" id="message" cols="30" rows="10" class="form-control" required autocomplete="off" tabindex="3" placeholder="Escreve alguma coisa"></textarea>
 								</div>
 								<div class="item-text input-error"></div> 
 							</div>
@@ -55,8 +47,8 @@
 						<div class="gtco-contact-info">
 							<h3>Informações de Contato</h3>
 							<ul>
-								<li class="address">Avenida, R. José Versolato, 101 - 12ª andar - Centro, São Bernardo do Campo - SP, 09750-730</li>
-								<li class="phone"><a href="tel://1121497360">(11) 98333-0842</a></li>
+								<li class="address">Avenida, R. José Versolato, 454545 - 17ª andar - Centro, São Paulo - SP,00000-730</li>
+								<li class="phone"><a href="tel://11983330842">(11) 98333-0842</a></li>
 								<li class="email"><a href="mailto:itasouza@yahoo.com.br">itasouza@yahoo.com.br</a></li>
 								<li class="url"><a href="http://www.yahoo.com.br">yahoo.com.br</a></li>
 							</ul>
@@ -70,48 +62,4 @@
 	</div>
 
 	<%- include('inc/footer-pagina') -%>
-
-	</div>
-
-
-	<%- include('inc/gotop-pagina') -%>
-	<%- include('inc/script-pagina') -%>
-
-	</body>
-
-
-	<script type="text/javascript" charset="utf-8" >
-		 
-		 
-		 $(document).ready(function(){
-			$('.cep').mask('00000-000');
-			$('.telefone').mask('(00)00000-0000');
-			$('.campovalor').mask('#.##0,00', {reverse: true});
-			$('.cpf').mask('000.000.000-00', { reverse: true });
-			$('.cnpj').mask('00.000.000/0000-00', { reverse: true });
-		});
-
-		/* Validate & Submit Form */
-		$('form').validate({
-			messages: {
-			name: {
-			  required: 'Por favor preencha o seu nome.',
-				},             
-			email: {
-			  required: 'Por favor preencha o seu email.',
-				},  
-			message: {
-				required: 'Adicionar uma mensagem.',
-				},             
-		  },
-		  onkeyup: false,
-			errorElement : 'div',
-		  errorPlacement: function(error, element) {
-			error.appendTo(element.parent().siblings('.input-error'));
-		  }
-		});
-  
-	</script>
-
-</html>
 
