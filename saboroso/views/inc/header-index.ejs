@@ -8,6 +8,9 @@ data-stellar-background-ratio="0.5">
 
                <div class="row row-mt-15em">
                    <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+
+
+                        
                        <h1 class="cursive-font">Restaurante Saboroso!</h1>
                    </div>
                    <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
@@ -16,14 +19,17 @@ data-stellar-background-ratio="0.5">
 
                                <div class="tab-content">
                                    <div class="tab-content-inner active" data-content="signup">
+
+                                        <%- include("alerts.ejs")-%> 
+                                        
                                        <h3 class="cursive-font">Reserva de mesa</h3>
 
-                                       <form action="" method="POST" id="reservations">
+                                       <form action="/" method="POST" id="reservations">
 
                                            <div class="row form-group">
                                                <div class="col-md-12">
                                                    <label for="inputName">Nome</label>
-                                                   <input type="text" id="inputName" name="name" class="form-control" tabindex="1" required autocomplete="off"  >
+                                                   <input type="text" id="inputName" name="name" class="form-control" value="<%= body.name %>" tabindex="1"  autocomplete="off"  >
                                                </div>
                                                <div class="item-text input-error"></div> 
                                            </div>
@@ -31,7 +37,7 @@ data-stellar-background-ratio="0.5">
                                            <div class="row form-group">
                                                <div class="col-md-12">
                                                    <label for="inputEmail">E-mail</label>
-                                                   <input type="email" title="Por favor preencha o seu email válido" name="email" class="form-control" tabindex="2" id="inputEmail" required placeholder="Adicionar um e-mail válido" autocomplete="off">
+                                                   <input type="email" title="Por favor preencha o seu email válido" value="<%= body.email %>" name="email" class="form-control" tabindex="2" id="inputEmail"  placeholder="Adicionar um e-mail válido" autocomplete="off">
                                                </div>
                                                <div class="item-text input-error"></div> 
                                            </div>
@@ -39,13 +45,13 @@ data-stellar-background-ratio="0.5">
                                            <div class="row form-group">
                                                <div class="col-md-12">
                                                    <label for="inputPeople">Pessoas</label>
-                                                   <select id="inputPeople" name="people" required tabindex="3" class="form-control">
+                                                   <select id="inputPeople" name="people"  tabindex="3" class="form-control">
                                                        <option value=""> -- selecione -- </option>
-                                                       <option value="1">1</option>
-                                                       <option value="2">2</option>
-                                                       <option value="3">3</option>
-                                                       <option value="4">4</option>
-                                                       <option value="5">5+</option>
+                                                       <option <% if (body.people==1) { %>selected<% } %> value="1">1</option>
+                                                       <option <% if (body.people==2) { %>selected<% } %> value="2">2</option>
+                                                       <option <% if (body.people==3) { %>selected<% } %> value="3">3</option>
+                                                       <option <% if (body.people==4) { %>selected<% } %> value="4">4</option>
+                                                       <option <% if (body.people==5) { %>selected<% } %> value="5">5+</option>                   
                                                    </select>
                                                </div>
                                                <div class="item-text input-error"></div>
@@ -54,7 +60,7 @@ data-stellar-background-ratio="0.5">
                                            <div class="row form-group">
                                                <div class="col-md-12">
                                                    <label for="inputDate">Data</label>
-                                                   <input type="text" id="inputDate" name="date" required tabindex="4" class="form-control">
+                                                   <input type="text" id="inputDate" name="date" value="<%= body.date %>"  tabindex="4" class="form-control">
                                                </div>
                                                <div class="item-text input-error"></div>
                                            </div>
@@ -62,7 +68,7 @@ data-stellar-background-ratio="0.5">
                                            <div class="row form-group">
                                                <div class="col-md-12">
                                                    <label for="inputTime">Hora</label>
-                                                   <input type="text" id="inputTime" name="time" required tabindex="5" class="form-control">
+                                                   <input type="text" id="inputTime" name="time"  value="<%= body.time %>" tabindex="5" class="form-control">
                                                </div>
                                                <div class="item-text input-error"></div>
                                            </div>

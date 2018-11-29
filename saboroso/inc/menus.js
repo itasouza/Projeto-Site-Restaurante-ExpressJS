@@ -1,6 +1,7 @@
 var conexao = require('./db');
 
 module.exports = {
+
     getMenus() {
         return new Promise((resolve, reject) => {
 
@@ -17,5 +18,7 @@ module.exports = {
                 });
 
         });
-    }
+    },
+
+
 };

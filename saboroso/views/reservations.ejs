@@ -9,15 +9,17 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="col-md-6 animate-box">
+
+                    <%- include("inc/alerts.ejs")-%> 
+
                     <h3>Reserva de mesa</h3>
                     
-                    <form action="" method="POST" id="reservations">
-
+                    <form action="/reservations" method="POST" id="reservations">
     
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputName">Nome</label>
-                                <input type="text" id="inputName" name="name" class="form-control" tabindex="1" required autocomplete="off" >
+                                <input type="text" id="inputName" name="name" class="form-control" tabindex="1" value="<%= body.name %>" autocomplete="off" >
                             </div>
                             <div class="item-text input-error"></div> 
                         </div>
@@ -25,7 +27,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputEmail">E-mail</label>
-                                <input type="email" title="Por favor preencha o seu email válido" name="email" class="form-control" tabindex="2" id="inputEmail" required placeholder="Adicionar um e-mail válido" autocomplete="off">
+                                <input type="email" title="Por favor preencha o seu email válido" name="email"  value="<%= body.email %>" class="form-control" tabindex="2" id="inputEmail"  placeholder="Adicionar um e-mail válido" autocomplete="off">
                             </div>
                             <div class="item-text input-error"></div> 
                         </div>
@@ -33,13 +35,13 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputPeople">Pessoas</label>
-                                <select id="inputPeople" name="people" required tabindex="3" class="form-control">
+                                <select id="inputPeople" name="people"  tabindex="3" class="form-control">
                                     <option value=""> -- selecione -- </option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5+</option>
+                                    <option <% if (body.people==1) { %>selected<% } %> value="1">1</option>
+                                    <option <% if (body.people==2) { %>selected<% } %> value="2">2</option>
+                                    <option <% if (body.people==3) { %>selected<% } %> value="3">3</option>
+                                    <option <% if (body.people==4) { %>selected<% } %> value="4">4</option>
+                                    <option <% if (body.people==5) { %>selected<% } %> value="5">5+</option>
                                 </select>
                             </div>
                             <div class="item-text input-error"></div>
@@ -48,7 +50,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputDate">Data</label>
-                                <input type="text" id="inputDate" name="date" required tabindex="4" class="form-control">
+                                <input type="text" id="inputDate" name="date"  tabindex="4"  value="<%= body.date %>" class="form-control">
                             </div>
                             <div class="item-text input-error"></div>
                         </div>
@@ -56,7 +58,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="inputTime">Hora</label>
-                                <input type="text" id="inputTime" name="time" required tabindex="5" class="form-control">
+                                <input type="text" id="inputTime" name="time"  tabindex="5"  value="<%= body.time %>" class="form-control">
                             </div>
                             <div class="item-text input-error"></div>
                         </div>
